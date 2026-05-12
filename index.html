@@ -74,6 +74,21 @@
       font-weight: bold;
     }
 
+    .badge {
+      font-size: 12px;
+      background: gold;
+      color: black;
+      padding: 3px 8px;
+      border-radius: 8px;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+
+    .flavor-name {
+      display: flex;
+      align-items: center;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -96,44 +111,62 @@
 
 <div class="container">
 
+  <!-- STARTER -->
   <div class="category">
     <h2>Starter</h2>
+
     <div class="item">
       <span>Vanilla</span>
       <span class="price">$3</span>
     </div>
+
     <div class="item">
       <span>Chocolate</span>
       <span class="price">$3</span>
     </div>
   </div>
 
+  <!-- UPGRADED -->
   <div class="category">
     <h2>Upgraded</h2>
+
     <div class="item">
       <span>Cookies n Cream</span>
       <span class="price">$5</span>
     </div>
+
     <div class="item">
       <span>Peanut Butter</span>
       <span class="price">$5</span>
     </div>
+
+    <div class="item">
+      <span>Mint Chip</span>
+      <span class="price">$5</span>
+    </div>
   </div>
 
+  <!-- ULTIMATE -->
   <div class="category">
     <h2>Ultimate</h2>
+
     <div class="item">
-      <span>Banana Bread</span>
+      <span class="flavor-name">
+        Banana Bread <span class="badge">Signature Flavor</span>
+      </span>
       <span class="price">$8</span>
     </div>
-    <div class="item">
-      <span>Dirt</span>
-      <span class="price">$8</span>
-    </div>
+
     <div class="item">
       <span>Brownie Blast</span>
       <span class="price">$8</span>
     </div>
+
+    <div class="item">
+      <span>Chocolate Crunch Dirt</span>
+      <span class="price">$8</span>
+    </div>
+
   </div>
 
 </div>
