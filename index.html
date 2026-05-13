@@ -40,17 +40,17 @@ nav{
   color:#ff416c;
 }
 
-/* HERO (SMALLER AGAIN) */
+/* HERO */
 
 header{
   background:linear-gradient(135deg,#ff7b54,#ff416c);
   color:white;
   text-align:center;
-  padding:95px 20px; /* 🔽 reduced */
+  padding:95px 20px;
 }
 
 header h1{
-  font-size:54px; /* slightly smaller */
+  font-size:54px;
   font-weight:800;
 }
 
@@ -60,7 +60,7 @@ header p{
   opacity:0.95;
 }
 
-/* BUTTONS */
+/* BUTTONS (NOW BOXED) */
 
 .hero-buttons{
   margin-top:25px;
@@ -71,11 +71,30 @@ header p{
 }
 
 .btn{
-  padding:13px 24px;
-  border-radius:999px;
+  padding:13px 22px;
+  border-radius:12px;   /* 🔲 box style */
   font-weight:800;
   text-decoration:none;
   font-size:15px;
+  transition:0.2s ease;
+  border:2px solid rgba(255,255,255,0.6);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* solid white box button */
+.btn-light{
+  background:white;
+  color:#ff416c;
+  border:none;
+}
+
+/* outlined box button */
+.btn-outline{
+  background:rgba(255,255,255,0.15);
+  color:white;
 }
 
 /* BAR */
@@ -102,7 +121,7 @@ section{
   margin-bottom:40px;
 }
 
-/* CARDS */
+/* CARD */
 
 .card{
   background:white;
@@ -146,7 +165,7 @@ section{
   font-weight:800;
 }
 
-/* WHY SECTION (UPDATED INTO BOXES) */
+/* WHY GRID */
 
 .why-grid{
   display:grid;
@@ -173,6 +192,28 @@ section{
   color:#475569;
 }
 
+/* SOLD OUT (MORE FADED) */
+
+.sold-out{
+  opacity:0.2;   /* 🔽 stronger fade */
+  position:relative;
+  filter:grayscale(100%);
+}
+
+.sold-out::after{
+  content:"SOLD OUT";
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  background:#111827;
+  color:white;
+  font-size:11px;
+  padding:5px 8px;
+  border-radius:6px;
+  font-weight:800;
+}
+
 /* FOOTER */
 
 footer{
@@ -193,7 +234,7 @@ footer{
   <div class="logo">Ben’s Protein Ice Cream</div>
 </nav>
 
-<!-- HERO (SMALLER) -->
+<!-- HERO -->
 <header>
 
 <h1>Ben’s Protein Ice Cream</h1>
@@ -286,6 +327,7 @@ footer{
   <div class="price">$7</div>
 </div>
 
+<!-- MORE FADED SOLD OUT ITEM -->
 <div class="item sold-out">
   <div class="left">
     <div class="flavor">Seasonal Flavor</div>
@@ -312,7 +354,7 @@ Every flavor delivers great taste while giving over 20g of protein per serving.
 
 </section>
 
-<!-- WHY (NOW IN BOXES) -->
+<!-- WHY -->
 <section id="why">
 
 <div class="title">Why Ben’s?</div>
