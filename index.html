@@ -1,673 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Ben’s Protein Ice Cream</title>
-
-  <!-- Premium Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Montserrat', sans-serif;
-      background:#f5f7fb;
-      color:#1e293b;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(10px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 8%;
-      box-shadow:0 4px 18px rgba(0,0,0,0.06);
-    }
-
-    .logo{
-      font-size:30px;
-      font-weight:800;
-      color:#ff416c;
-      letter-spacing:-1px;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:30px;
-    }
-
-    .nav-links a{
-      text-decoration:none;
-      color:#1e293b;
-      font-weight:700;
-      font-size:16px;
-      transition:0.2s ease;
-    }
-
-    .nav-links a:hover{
-      color:#ff416c;
-    }
-
-    /* HERO */
-
-    header{
-      background:
-      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-      linear-gradient(135deg,#ff7b54,#ff416c);
-
-      color:white;
-      text-align:center;
-      padding:130px 20px 110px;
-    }
-
-    header h1{
-      font-size:88px;
-      font-weight:800;
-      line-height:1;
-      margin-bottom:18px;
-      letter-spacing:-2px;
-    }
-
-    header p{
-      font-size:30px;
-      font-weight:500;
-      margin-bottom:40px;
-      opacity:0.96;
-    }
-
-    .hero-buttons{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .hero-button{
-      text-decoration:none;
-      padding:17px 36px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:18px;
-      transition:0.25s ease;
-    }
-
-    .primary-btn{
-      background:white;
-      color:#ff416c;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .secondary-btn{
-      border:2px solid white;
-      color:white;
-    }
-
-    .hero-button:hover{
-      transform:translateY(-3px);
-    }
-
-    /* PROTEIN BANNER */
-
-    .protein-banner{
-      background:#111827;
-      color:white;
-      text-align:center;
-      padding:22px;
-      font-size:22px;
-      font-weight:700;
-      letter-spacing:0.3px;
-    }
-
-    /* SECTIONS */
-
-    section{
-      padding:85px 8%;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:52px;
-      font-weight:800;
-      margin-bottom:55px;
-      color:#111827;
-      letter-spacing:-1px;
-    }
-
-    /* CATEGORY CARDS */
-
-    .category{
-      background:white;
-      border-radius:28px;
-      padding:38px;
-      margin-bottom:40px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.08);
-      transition:0.25s ease;
-    }
-
-    .category:hover{
-      transform:translateY(-5px);
-    }
-
-    .category h3{
-      font-size:38px;
-      color:#ff416c;
-      margin-bottom:28px;
-      padding-bottom:14px;
-      border-bottom:3px solid #edf2f7;
-    }
-
-    /* ITEMS */
-
-    .item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 0;
-      border-bottom:1px solid #eef2f7;
-    }
-
-    .item:last-child{
-      border-bottom:none;
-    }
-
-    .flavor{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-      font-size:25px;
-      font-weight:700;
-    }
-
-    .description{
-      margin-top:7px;
-      font-size:15px;
-      color:#64748b;
-      font-weight:500;
-    }
-
-    .price{
-      font-size:30px;
-      font-weight:800;
-      color:#111827;
-    }
-
-    /* BADGES */
-
-    .badge{
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:0.5px;
-    }
-
-    .signature{
-      background:linear-gradient(135deg,#ffd700,#ffb703);
-      color:#111827;
-    }
-
-    .popular{
-      background:linear-gradient(135deg,#34d399,#10b981);
-      color:white;
-    }
-
-    /* ABOUT */
-
-    .about-box{
-      background:white;
-      border-radius:28px;
-      padding:55px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.08);
-      text-align:center;
-    }
-
-    .about-box h3{
-      font-size:42px;
-      margin-bottom:22px;
-      color:#111827;
-    }
-
-    .about-box p{
-      max-width:900px;
-      margin:auto;
-      font-size:21px;
-      line-height:1.9;
-      color:#475569;
-    }
-
-    /* WHY GRID */
-
-    .why-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:28px;
-      margin-top:40px;
-    }
-
-    .why-card{
-      background:white;
-      border-radius:24px;
-      padding:40px;
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,0.08);
-      transition:0.25s ease;
-    }
-
-    .why-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .why-card h4{
-      font-size:28px;
-      margin-bottom:14px;
-      color:#ff416c;
-    }
-
-    .why-card p{
-      font-size:17px;
-      line-height:1.8;
-      color:#64748b;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:#111827;
-      color:white;
-      text-align:center;
-      padding:40px 20px;
-      margin-top:40px;
-    }
-
-    footer p{
-      opacity:0.9;
-      font-size:16px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      nav{
-        flex-direction:column;
-        gap:16px;
-      }
-
-      .nav-links{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      header h1{
-        font-size:56px;
-      }
-
-      header p{
-        font-size:22px;
-      }
-
-      .section-title{
-        font-size:40px;
-      }
-
-      .category{
-        padding:28px;
-      }
-
-      .category h3{
-        font-size:30px;
-      }
-
-      .flavor{
-        font-size:21px;
-      }
-
-      .price{
-        font-size:24px;
-      }
-
-      .about-box{
-        padding:35px;
-      }
-
-      .about-box h3{
-        font-size:32px;
-      }
-
-      .about-box p{
-        font-size:18px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ben’s Protein Ice Cream</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Montserrat', sans-serif;
+  background:#f5f7fb;
+  color:#1e293b;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  z-index:1000;
+}
+
+.logo{
+  font-weight:800;
+  font-size:24px;
+  color:#ff416c;
+}
+
+.nav-links a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#1e293b;
+  font-weight:700;
+  font-size:14px;
+}
+
+/* HERO */
+
+header{
+  background:linear-gradient(135deg,#ff7b54,#ff416c);
+  color:white;
+  text-align:center;
+  padding:110px 20px;
+}
+
+header h1{
+  font-size:70px;
+  font-weight:800;
+}
+
+header p{
+  font-size:24px;
+  margin-top:10px;
+}
+
+/* PROTEIN BAR */
+
+.bar{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:16px;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* SECTIONS */
+
+section{
+  padding:70px 8%;
+}
+
+.title{
+  text-align:center;
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:35px;
+}
+
+/* MENU CARD */
+
+.card{
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  margin-bottom:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  font-size:28px;
+  color:#ff416c;
+  margin-bottom:18px;
+}
+
+/* ITEM */
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:16px 0;
+  border-bottom:1px solid #eee;
+  align-items:center;
+}
+
+.item:last-child{
+  border-bottom:none;
+}
+
+.flavor{
+  font-size:20px;
+  font-weight:700;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.price{
+  font-size:22px;
+  font-weight:800;
+}
+
+/* BADGES */
+
+.badge{
+  font-size:11px;
+  padding:4px 9px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.signature{
+  background:gold;
+}
+
+.popular{
+  background:#10b981;
+  color:white;
+}
+
+/* SOLD OUT */
+
+.sold-out{
+  opacity:0.35;
+  position:relative;
+}
+
+.sold-out::after{
+  content:"SOLD OUT";
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  background:#111827;
+  color:white;
+  font-size:11px;
+  padding:5px 8px;
+  border-radius:6px;
+  font-weight:800;
+}
+
+/* ABOUT */
+
+.about{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.about p{
+  font-size:17px;
+  line-height:1.7;
+  color:#475569;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header h1{
+  font-size:44px;
+}
+
+header p{
+  font-size:18px;
+}
+
+.title{
+  font-size:32px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-
-  <nav>
-
-    <div class="logo">
-      Ben’s Protein Ice Cream
-    </div>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#why">Why Ben’s?</a>
-    </div>
-
-  </nav>
-
-  <!-- HERO -->
-
-  <header id="home">
-
-    <h1>Ben’s Protein Ice Cream</h1>
-
-    <p>Ice cream without the guilt</p>
-
-    <div class="hero-buttons">
-
-      <a href="#menu" class="hero-button primary-btn">
-        View Menu
-      </a>
-
-      <a href="#about" class="hero-button secondary-btn">
-        Learn More
-      </a>
-
-    </div>
-
-  </header>
-
-  <!-- PROTEIN BANNER -->
-
-  <div class="protein-banner">
-    💪 Over 20g of protein in every ice cream
+<!-- NAV -->
+<nav>
+  <div class="logo">Ben’s Protein Ice Cream</div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
   </div>
-
-  <!-- MENU -->
-
-  <section id="menu">
-
-    <h2 class="section-title">
-      Our Menu
-    </h2>
-
-    <!-- STARTER -->
-
-    <div class="category">
-
-      <h3>Starter</h3>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Vanilla
-          </div>
-
-          <div class="description">
-            Smooth and creamy classic vanilla
-          </div>
-
-        </div>
-
-        <div class="price">$3</div>
-
-      </div>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Chocolate
-            <span class="badge popular">Popular</span>
-          </div>
-
-          <div class="description">
-            Rich chocolate flavor with extra creaminess
-          </div>
-
-        </div>
-
-        <div class="price">$3</div>
-
-      </div>
-
-    </div>
-
-    <!-- UPGRADED -->
-
-    <div class="category">
-
-      <h3>Upgraded</h3>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Cookies n Cream
-            <span class="badge popular">Best Seller</span>
-          </div>
-
-          <div class="description">
-            Crushed cookies blended into creamy vanilla
-          </div>
-
-        </div>
-
-        <div class="price">$5</div>
-
-      </div>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Peanut Butter
-          </div>
-
-          <div class="description">
-            Creamy peanut butter packed with protein
-          </div>
-
-        </div>
-
-        <div class="price">$5</div>
-
-      </div>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Mint Chip
-          </div>
-
-          <div class="description">
-            Cool mint flavor with chocolate chips
-          </div>
-
-        </div>
-
-        <div class="price">$5</div>
-
-      </div>
-
-    </div>
-
-    <!-- ULTIMATE -->
-
-    <div class="category">
-
-      <h3>Ultimate</h3>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Banana Bread
-            <span class="badge signature">
-              Signature Flavor
-            </span>
-          </div>
-
-          <div class="description">
-            Banana bread inspired ice cream with cinnamon flavor
-          </div>
-
-        </div>
-
-        <div class="price">$7</div>
-
-      </div>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Brownie Blast
-          </div>
-
-          <div class="description">
-            Rich brownie flavor with chocolate chunks
-          </div>
-
-        </div>
-
-        <div class="price">$7</div>
-
-      </div>
-
-      <div class="item">
-
-        <div>
-
-          <div class="flavor">
-            Chocolate Crunch Dirt
-          </div>
-
-          <div class="description">
-            Chocolate cookie crumble with crunchy mix-ins
-          </div>
-
-        </div>
-
-        <div class="price">$7</div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-
-    <h2 class="section-title">
-      About Ben’s
-    </h2>
-
-    <div class="about-box">
-
-      <h3>Built for Flavor & Protein</h3>
-
-      <p>
-        Ben’s Protein Ice Cream combines the flavor of real ice cream
-        with high-protein ingredients designed for athletes, students,
-        gym-goers, and anyone who wants a better dessert option.
-        Every flavor is crafted to taste indulgent while still delivering
-        over 20g of protein per serving.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- WHY -->
-
-  <section id="why">
-
-    <h2 class="section-title">
-      Why Choose Ben’s?
-    </h2>
-
-    <div class="why-grid">
-
-      <div class="why-card">
-
-        <h4>💪 High Protein</h4>
-
-        <p>
-          Packed with protein to help keep you full and energized.
-        </p>
-
-      </div>
-
-      <div class="why-card">
-
-        <h4>🍦 Real Ice Cream Flavor</h4>
-
-        <p>
-          Creamy texture and rich flavor without sacrificing taste.
-        </p>
-
-      </div>
-
-      <div class="why-card">
-
-        <h4>🔥 Guilt-Free Dessert</h4>
-
-        <p>
-          Enjoy dessert while still staying on track with your goals.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      © 2026 Ben’s Protein Ice Cream
-    </p>
-
-  </footer>
+</nav>
+
+<!-- HERO -->
+<header>
+  <h1>Ben’s Protein Ice Cream</h1>
+  <p>Ice cream without the guilt</p>
+</header>
+
+<!-- PROTEIN BAR -->
+<div class="bar">
+💪 Over 20g of protein per serving
+</div>
+
+<!-- MENU -->
+<section id="menu">
+
+<div class="title">Menu</div>
+
+<!-- STARTER -->
+<div class="card">
+<h2>Starter</h2>
+
+<div class="item">
+  <div class="flavor">Vanilla</div>
+  <div class="price">$3</div>
+</div>
+
+<div class="item">
+  <div class="flavor">Chocolate</div>
+  <div class="price">$3</div>
+</div>
+
+</div>
+
+<!-- UPGRADED -->
+<div class="card">
+<h2>Upgraded</h2>
+
+<div class="item">
+  <div class="flavor">Cookies n Cream</div>
+  <div class="price">$5</div>
+</div>
+
+<div class="item">
+  <div class="flavor">Peanut Butter</div>
+  <div class="price">$5</div>
+</div>
+
+<div class="item">
+  <div class="flavor">Mint Chip</div>
+  <div class="price">$5</div>
+</div>
+
+</div>
+
+<!-- ULTIMATE -->
+<div class="card">
+<h2>Ultimate</h2>
+
+<div class="item">
+  <div class="flavor">Banana Bread <span class="badge signature">Signature</span></div>
+  <div class="price">$7</div>
+</div>
+
+<div class="item">
+  <div class="flavor">Brownie Blast</div>
+  <div class="price">$7</div>
+</div>
+
+<!-- Example SOLD OUT -->
+<div class="item sold-out">
+  <div class="flavor">Seasonal Flavor</div>
+  <div class="price">$7</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="title">About</div>
+
+<div class="about">
+<p>
+Ben’s Protein Ice Cream is a high-protein dessert brand designed for students and athletes.
+Every scoop delivers great taste with over 20g of protein, making dessert feel guilt-free and powerful.
+</p>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Ben’s Protein Ice Cream
+</footer>
 
 </body>
 </html>
