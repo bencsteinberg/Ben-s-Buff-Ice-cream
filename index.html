@@ -60,7 +60,7 @@ header p{
   opacity:0.95;
 }
 
-/* BUTTONS (NOW BOXED) */
+/* BUTTONS */
 
 .hero-buttons{
   margin-top:25px;
@@ -72,29 +72,10 @@ header p{
 
 .btn{
   padding:13px 22px;
-  border-radius:12px;   /* 🔲 box style */
+  border-radius:12px;
   font-weight:800;
   text-decoration:none;
   font-size:15px;
-  transition:0.2s ease;
-  border:2px solid rgba(255,255,255,0.6);
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-/* solid white box button */
-.btn-light{
-  background:white;
-  color:#ff416c;
-  border:none;
-}
-
-/* outlined box button */
-.btn-outline{
-  background:rgba(255,255,255,0.15);
-  color:white;
 }
 
 /* BAR */
@@ -129,6 +110,16 @@ section{
   border-radius:20px;
   margin-bottom:25px;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* 🔥 UPDATED MENU SECTION TITLES */
+
+.card h2{
+  font-size:34px;          /* bigger */
+  font-weight:900;         /* bolder */
+  color:#ff416c;           /* brand color instead of black */
+  margin-bottom:20px;
+  letter-spacing:0.5px;
 }
 
 /* ITEMS */
@@ -192,10 +183,10 @@ section{
   color:#475569;
 }
 
-/* SOLD OUT (MORE FADED) */
+/* SOLD OUT */
 
 .sold-out{
-  opacity:0.2;   /* 🔽 stronger fade */
+  opacity:0.2;
   position:relative;
   filter:grayscale(100%);
 }
@@ -229,14 +220,11 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Ben’s Protein Ice Cream</div>
 </nav>
 
-<!-- HERO -->
 <header>
-
 <h1>Ben’s Protein Ice Cream</h1>
 <p>Ice cream without the guilt</p>
 
@@ -245,15 +233,12 @@ footer{
   <a href="#about" class="btn btn-outline">Learn More</a>
   <a href="#why" class="btn btn-outline">Why Ben’s</a>
 </div>
-
 </header>
 
-<!-- BAR -->
 <div class="bar">
 💪 Over 20g of protein per serving
 </div>
 
-<!-- MENU -->
 <section id="menu">
 
 <div class="title">Menu</div>
@@ -327,7 +312,6 @@ footer{
   <div class="price">$7</div>
 </div>
 
-<!-- MORE FADED SOLD OUT ITEM -->
 <div class="item sold-out">
   <div class="left">
     <div class="flavor">Seasonal Flavor</div>
@@ -340,9 +324,7 @@ footer{
 
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-
 <div class="title">About</div>
 
 <div class="card">
@@ -351,12 +333,9 @@ Ben’s Protein Ice Cream is a high-protein dessert brand made for students and 
 Every flavor delivers great taste while giving over 20g of protein per serving.
 </p>
 </div>
-
 </section>
 
-<!-- WHY -->
 <section id="why">
-
 <div class="title">Why Ben’s?</div>
 
 <div class="why-grid">
@@ -377,10 +356,8 @@ Every flavor delivers great taste while giving over 20g of protein per serving.
 </div>
 
 </div>
-
 </section>
 
-<!-- FOOTER -->
 <footer>
 © 2026 Ben’s Protein Ice Cream
 </footer>
