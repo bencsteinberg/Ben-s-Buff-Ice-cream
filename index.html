@@ -22,7 +22,7 @@ body{
   color:#1e293b;
 }
 
-/* NAV (CLEAN - BRAND ONLY) */
+/* NAV (BRAND ONLY) */
 
 nav{
   position:sticky;
@@ -31,6 +31,7 @@ nav{
   padding:18px 8%;
   box-shadow:0 4px 14px rgba(0,0,0,0.06);
   text-align:center;
+  z-index:1000;
 }
 
 .logo{
@@ -57,6 +58,39 @@ header p{
   font-size:24px;
   margin-top:10px;
   opacity:0.95;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  font-size:15px;
+  transition:0.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-light{
+  background:white;
+  color:#ff416c;
+}
+
+.btn-outline{
+  border:2px solid white;
+  color:white;
 }
 
 /* PROTEIN BAR */
@@ -120,9 +154,6 @@ section{
 .flavor{
   font-size:20px;
   font-weight:800;
-  display:flex;
-  gap:10px;
-  align-items:center;
 }
 
 .desc{
@@ -130,8 +161,6 @@ section{
   color:#64748b;
   margin-top:5px;
 }
-
-/* PRICE */
 
 .price{
   font-size:22px;
@@ -156,25 +185,41 @@ section{
   color:white;
 }
 
-/* SOLD OUT */
+/* WHY */
 
-.sold-out{
-  opacity:0.35;
-  position:relative;
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-.sold-out::after{
-  content:"SOLD OUT";
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
-  background:#111827;
-  color:white;
-  font-size:11px;
-  padding:5px 8px;
-  border-radius:6px;
-  font-weight:800;
+.why-card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.why-card h3{
+  color:#ff416c;
+  margin-bottom:10px;
+}
+
+/* ABOUT */
+
+.about{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.about p{
+  font-size:18px;
+  line-height:1.8;
+  color:#475569;
 }
 
 /* FOOTER */
@@ -187,51 +232,42 @@ footer{
   margin-top:50px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-header h1{
-  font-size:46px;
-}
-
-.title{
-  font-size:34px;
-}
-
-.left{
-  max-width:65%;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV (BRAND ONLY) -->
+<!-- NAV -->
 <nav>
   <div class="logo">Ben’s Protein Ice Cream</div>
 </nav>
 
 <!-- HERO -->
-<header>
-  <h1>Ben’s Protein Ice Cream</h1>
-  <p>Ice cream without the guilt</p>
+<header id="home">
+
+<h1>Ben’s Protein Ice Cream</h1>
+<p>Ice cream without the guilt</p>
+
+<div class="hero-buttons">
+
+  <a href="#menu" class="btn btn-light">View Menu</a>
+  <a href="#about" class="btn btn-outline">Learn More</a>
+  <a href="#why" class="btn btn-outline">Why Ben’s</a>
+
+</div>
+
 </header>
 
-<!-- PROTEIN BAR -->
+<!-- BAR -->
 <div class="bar">
 💪 Over 20g of protein per serving
 </div>
 
 <!-- MENU -->
-<section>
+<section id="menu">
 
 <div class="title">Menu</div>
 
-<!-- STARTER -->
 <div class="card">
 <h2>Starter</h2>
 
@@ -246,21 +282,20 @@ header h1{
 <div class="item">
   <div class="left">
     <div class="flavor">Chocolate</div>
-    <div class="desc">Rich chocolate taste with a deep cocoa flavor.</div>
+    <div class="desc">Rich chocolate taste with deep cocoa flavor.</div>
   </div>
   <div class="price">$3</div>
 </div>
 
 </div>
 
-<!-- UPGRADED -->
 <div class="card">
 <h2>Upgraded</h2>
 
 <div class="item">
   <div class="left">
     <div class="flavor">Cookies n Cream</div>
-    <div class="desc">Creamy vanilla base mixed with crunchy cookie pieces.</div>
+    <div class="desc">Creamy vanilla base mixed with cookie crunch.</div>
   </div>
   <div class="price">$5</div>
 </div>
@@ -268,7 +303,7 @@ header h1{
 <div class="item">
   <div class="left">
     <div class="flavor">Peanut Butter</div>
-    <div class="desc">Smooth peanut butter blended into a high-protein base.</div>
+    <div class="desc">Smooth peanut butter blended into protein ice cream.</div>
   </div>
   <div class="price">$5</div>
 </div>
@@ -276,23 +311,20 @@ header h1{
 <div class="item">
   <div class="left">
     <div class="flavor">Mint Chip</div>
-    <div class="desc">Refreshing mint flavor with chocolate chip crunch.</div>
+    <div class="desc">Cool mint flavor with chocolate chips.</div>
   </div>
   <div class="price">$5</div>
 </div>
 
 </div>
 
-<!-- ULTIMATE -->
 <div class="card">
 <h2>Ultimate</h2>
 
 <div class="item">
   <div class="left">
-    <div class="flavor">
-      Banana Bread <span class="badge signature">Signature</span>
-    </div>
-    <div class="desc">Our signature flavor inspired by warm banana bread and cinnamon spice.</div>
+    <div class="flavor">Banana Bread</div>
+    <div class="desc">Signature flavor inspired by warm banana bread and cinnamon.</div>
   </div>
   <div class="price">$7</div>
 </div>
@@ -300,17 +332,49 @@ header h1{
 <div class="item">
   <div class="left">
     <div class="flavor">Brownie Blast</div>
-    <div class="desc">Chocolate brownie flavor with rich fudge-like texture.</div>
+    <div class="desc">Rich chocolate brownie flavor with fudge texture.</div>
   </div>
   <div class="price">$7</div>
 </div>
 
-<div class="item sold-out">
-  <div class="left">
-    <div class="flavor">Seasonal Flavor</div>
-    <div class="desc">Limited time flavor — check back soon!</div>
-  </div>
-  <div class="price">$7</div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="title">About</div>
+
+<div class="about">
+<p>
+Ben’s Protein Ice Cream is a high-protein dessert brand designed for students and athletes.
+Every flavor delivers great taste while giving you over 20g of protein per serving.
+</p>
+</div>
+
+</section>
+
+<!-- WHY -->
+<section id="why">
+
+<div class="title">Why Ben’s?</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>💪 High Protein</h3>
+<p>Keeps you full and energized.</p>
+</div>
+
+<div class="why-card">
+<h3>🍦 Great Taste</h3>
+<p>Tastes like real ice cream, not diet food.</p>
+</div>
+
+<div class="why-card">
+<h3>🔥 Guilt-Free</h3>
+<p>Enjoy dessert without feeling bad after.</p>
 </div>
 
 </div>
