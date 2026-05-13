@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Ben’s Protein Ice Cream</title>
 
-  <!-- Premium Font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -15,13 +15,50 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
     body{
       font-family:'Montserrat', sans-serif;
       background:#f4f7fb;
       color:#1e293b;
-      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      color:#ff416c;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#1e293b;
+      font-weight:700;
+      font-size:16px;
+      transition:0.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:#ff416c;
     }
 
     /* HERO */
@@ -33,75 +70,79 @@
 
       color:white;
       text-align:center;
-      padding:110px 20px 90px;
-    }
-
-    .hero-content{
-      max-width:900px;
-      margin:auto;
+      padding:120px 20px 100px;
     }
 
     header h1{
-      font-size:78px;
+      font-size:82px;
       font-weight:800;
-      letter-spacing:1px;
-      margin-bottom:18px;
+      margin-bottom:20px;
       line-height:1.05;
     }
 
     header p{
-      font-size:28px;
+      font-size:30px;
+      margin-bottom:35px;
       font-weight:500;
-      opacity:0.95;
-      margin-bottom:30px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
     }
 
     .hero-button{
       display:inline-block;
-      background:white;
-      color:#ff416c;
       padding:16px 34px;
       border-radius:999px;
       text-decoration:none;
       font-weight:700;
       font-size:18px;
-      transition:0.2s ease;
-      box-shadow:0 8px 18px rgba(0,0,0,0.18);
+      transition:0.25s ease;
+    }
+
+    .primary-btn{
+      background:white;
+      color:#ff416c;
+    }
+
+    .secondary-btn{
+      border:2px solid white;
+      color:white;
     }
 
     .hero-button:hover{
-      transform:translateY(-2px);
+      transform:translateY(-3px);
     }
 
-    /* PROTEIN BANNER */
+    /* PROTEIN BAR */
 
     .protein-banner{
       background:#111827;
       color:white;
       text-align:center;
-      padding:22px;
-      font-size:24px;
+      padding:20px;
+      font-size:22px;
       font-weight:700;
-      letter-spacing:0.5px;
     }
 
-    /* MAIN */
+    /* GENERAL SECTION */
 
-    .container{
-      max-width:1150px;
-      margin:auto;
-      padding:60px 25px;
+    section{
+      padding:80px 8%;
     }
 
     .section-title{
       text-align:center;
-      font-size:46px;
+      font-size:50px;
       margin-bottom:50px;
       font-weight:800;
       color:#111827;
     }
 
-    /* CATEGORY CARDS */
+    /* MENU */
 
     .category{
       background:white;
@@ -109,23 +150,15 @@
       padding:35px;
       margin-bottom:40px;
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      transition:0.25s ease;
     }
 
-    .category:hover{
-      transform:translateY(-5px);
-    }
-
-    .category h2{
-      font-size:38px;
-      margin-bottom:28px;
-      font-weight:800;
+    .category h3{
+      font-size:36px;
+      margin-bottom:25px;
       color:#ff416c;
       border-bottom:3px solid #edf2f7;
       padding-bottom:14px;
     }
-
-    /* ITEMS */
 
     .item{
       display:flex;
@@ -144,35 +177,30 @@
       align-items:center;
       gap:12px;
       font-size:24px;
-      font-weight:600;
+      font-weight:700;
       flex-wrap:wrap;
     }
 
     .description{
-      font-size:15px;
+      margin-top:6px;
       color:#64748b;
-      margin-top:5px;
+      font-size:15px;
       font-weight:500;
     }
 
     .price{
       font-size:28px;
       font-weight:800;
-      color:#111827;
-      white-space:nowrap;
     }
-
-    /* BADGES */
 
     .badge{
       background:linear-gradient(135deg,#ffd700,#ffb703);
       color:#111827;
-      font-size:12px;
-      font-weight:800;
       padding:6px 12px;
       border-radius:999px;
+      font-size:12px;
+      font-weight:800;
       text-transform:uppercase;
-      letter-spacing:0.5px;
     }
 
     .popular{
@@ -182,27 +210,54 @@
 
     /* ABOUT */
 
-    .about{
-      margin-top:70px;
+    .about-box{
       background:white;
+      padding:50px;
       border-radius:24px;
-      padding:45px;
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
       text-align:center;
     }
 
-    .about h3{
-      font-size:36px;
-      margin-bottom:20px;
-      color:#111827;
+    .about-box h3{
+      font-size:40px;
+      margin-bottom:25px;
     }
 
-    .about p{
-      font-size:20px;
-      color:#475569;
-      line-height:1.8;
-      max-width:800px;
+    .about-box p{
+      max-width:900px;
       margin:auto;
+      font-size:21px;
+      line-height:1.9;
+      color:#475569;
+    }
+
+    /* WHY SECTION */
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .why-card{
+      background:white;
+      padding:35px;
+      border-radius:22px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .why-card h4{
+      font-size:26px;
+      margin-bottom:15px;
+      color:#ff416c;
+    }
+
+    .why-card p{
+      color:#64748b;
+      font-size:17px;
+      line-height:1.7;
     }
 
     /* FOOTER */
@@ -212,11 +267,10 @@
       color:white;
       text-align:center;
       padding:35px 20px;
-      margin-top:70px;
+      margin-top:50px;
     }
 
     footer p{
-      font-size:16px;
       opacity:0.9;
     }
 
@@ -224,37 +278,25 @@
 
     @media(max-width:768px){
 
-      header{
-        padding:80px 20px;
+      nav{
+        flex-direction:column;
+        gap:15px;
       }
 
       header h1{
-        font-size:50px;
+        font-size:52px;
       }
 
       header p{
         font-size:22px;
       }
 
-      .hero-button{
-        font-size:16px;
-        padding:14px 28px;
-      }
-
-      .protein-banner{
-        font-size:18px;
-      }
-
       .section-title{
-        font-size:34px;
+        font-size:38px;
       }
 
-      .category{
-        padding:25px;
-      }
-
-      .category h2{
-        font-size:30px;
+      .category h3{
+        font-size:28px;
       }
 
       .flavor{
@@ -262,14 +304,18 @@
       }
 
       .price{
-        font-size:24px;
+        font-size:22px;
       }
 
-      .about h3{
-        font-size:28px;
+      .about-box{
+        padding:35px;
       }
 
-      .about p{
+      .about-box h3{
+        font-size:30px;
+      }
+
+      .about-box p{
         font-size:18px;
       }
 
@@ -280,17 +326,39 @@
 
 <body>
 
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      Ben’s Protein Ice Cream
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Ben’s?</a>
+    </div>
+
+  </nav>
+
   <!-- HERO -->
-  <header>
 
-    <div class="hero-content">
+  <header id="home">
 
-      <h1>Ben’s Protein Ice Cream</h1>
+    <h1>Ben’s Protein Ice Cream</h1>
 
-      <p>“Ice cream without the guilt”</p>
+    <p>“Ice cream without the guilt”</p>
 
-      <a href="#menu" class="hero-button">
+    <div class="hero-buttons">
+
+      <a href="#menu" class="hero-button primary-btn">
         View Menu
+      </a>
+
+      <a href="#about" class="hero-button secondary-btn">
+        Learn More
       </a>
 
     </div>
@@ -303,11 +371,11 @@
     💪 Over 20g of protein in every ice cream
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MENU -->
 
-  <div class="container">
+  <section id="menu">
 
-    <h2 class="section-title" id="menu">
+    <h2 class="section-title">
       Our Menu
     </h2>
 
@@ -315,7 +383,7 @@
 
     <div class="category">
 
-      <h2>Starter</h2>
+      <h3>Starter</h3>
 
       <div class="item">
 
@@ -325,7 +393,7 @@
           </div>
 
           <div class="description">
-            Smooth classic vanilla protein ice cream
+            Smooth and creamy classic vanilla
           </div>
         </div>
 
@@ -356,7 +424,7 @@
 
     <div class="category">
 
-      <h2>Upgraded</h2>
+      <h3>Upgraded</h3>
 
       <div class="item">
 
@@ -367,7 +435,7 @@
           </div>
 
           <div class="description">
-            Crushed cookies blended into creamy vanilla
+            Crushed cookies blended into vanilla protein ice cream
           </div>
         </div>
 
@@ -383,7 +451,7 @@
           </div>
 
           <div class="description">
-            Smooth peanut butter packed with protein
+            Creamy peanut butter packed with protein
           </div>
         </div>
 
@@ -413,7 +481,7 @@
 
     <div class="category">
 
-      <h2>Ultimate</h2>
+      <h3>Ultimate</h3>
 
       <div class="item">
 
@@ -426,7 +494,7 @@
           </div>
 
           <div class="description">
-            Banana bread inspired protein ice cream with cinnamon flavor
+            Banana bread inspired ice cream with cinnamon flavor
           </div>
         </div>
 
@@ -468,22 +536,70 @@
 
     </div>
 
-    <!-- ABOUT -->
+  </section>
 
-    <div class="about">
+  <!-- ABOUT -->
 
-      <h3>Why Ben’s?</h3>
+  <section id="about">
+
+    <h2 class="section-title">
+      About Ben’s
+    </h2>
+
+    <div class="about-box">
+
+      <h3>Built for Flavor & Protein</h3>
 
       <p>
-        Ben’s Protein Ice Cream combines the flavor of real ice cream
-        with high-protein ingredients designed to taste great without
-        the guilt. Built for students, athletes, gym-goers, and anyone
-        who wants dessert that feels rewarding.
+        Ben’s Protein Ice Cream was created to combine the taste of real
+        ice cream with high-protein ingredients that fuel athletes,
+        students, gym-goers, and anyone looking for a better dessert option.
+        Every flavor is designed to taste indulgent while still delivering
+        over 20g of protein per serving.
       </p>
 
     </div>
 
-  </div>
+  </section>
+
+  <!-- WHY -->
+
+  <section id="why">
+
+    <h2 class="section-title">
+      Why Choose Ben’s?
+    </h2>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h4>💪 High Protein</h4>
+
+        <p>
+          Every ice cream is packed with protein to help keep you full
+          and energized.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h4>🍦 Real Flavor</h4>
+
+        <p>
+          Creamy texture and dessert-level flavor without feeling heavy.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h4>🔥 Guilt-Free</h4>
+
+        <p>
+          Enjoy ice cream while still staying on track with your goals.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
 
   <!-- FOOTER -->
 
