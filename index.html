@@ -60,7 +60,7 @@ header p{
   opacity:0.95;
 }
 
-/* BUTTONS */
+/* HERO BUTTONS (FIXED BOXES) */
 
 .hero-buttons{
   margin-top:25px;
@@ -76,9 +76,27 @@ header p{
   font-weight:800;
   text-decoration:none;
   font-size:15px;
+
+  /* 🔥 FIX: makes them actual visible boxes */
+  display:inline-block;
+  border:2px solid rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.15);
+  color:white;
+  transition:0.2s ease;
 }
 
-/* BAR */
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* solid white button */
+.btn-light{
+  background:white;
+  color:#ff416c;
+  border:none;
+}
+
+/* PROTEIN BAR */
 
 .bar{
   background:#111827;
@@ -112,14 +130,13 @@ section{
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* 🔥 UPDATED MENU SECTION TITLES */
+/* MENU TITLES */
 
 .card h2{
-  font-size:34px;          /* bigger */
-  font-weight:900;         /* bolder */
-  color:#ff416c;           /* brand color instead of black */
+  font-size:34px;
+  font-weight:900;
+  color:#ff416c;
   margin-bottom:20px;
-  letter-spacing:0.5px;
 }
 
 /* ITEMS */
@@ -229,10 +246,13 @@ footer{
 <p>Ice cream without the guilt</p>
 
 <div class="hero-buttons">
+
   <a href="#menu" class="btn btn-light">View Menu</a>
-  <a href="#about" class="btn btn-outline">Learn More</a>
-  <a href="#why" class="btn btn-outline">Why Ben’s</a>
+  <a href="#about" class="btn">Learn More</a>
+  <a href="#why" class="btn">Why Ben’s</a>
+
 </div>
+
 </header>
 
 <div class="bar">
@@ -326,7 +346,6 @@ footer{
 
 <section id="about">
 <div class="title">About</div>
-
 <div class="card">
 <p>
 Ben’s Protein Ice Cream is a high-protein dessert brand made for students and athletes.
