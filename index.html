@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ben’s Protein Ice Cream</title>
 
@@ -13,6 +13,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
 body{
@@ -37,7 +38,7 @@ nav{
 
 .logo{
   font-weight:800;
-  font-size:24px;
+  font-size:22px;
   color:#ff416c;
 }
 
@@ -46,7 +47,6 @@ nav{
   text-decoration:none;
   color:#1e293b;
   font-weight:700;
-  font-size:14px;
 }
 
 /* HERO */
@@ -55,17 +55,49 @@ header{
   background:linear-gradient(135deg,#ff7b54,#ff416c);
   color:white;
   text-align:center;
-  padding:110px 20px;
+  padding:120px 20px;
 }
 
 header h1{
-  font-size:70px;
+  font-size:72px;
   font-weight:800;
 }
 
 header p{
   font-size:24px;
   margin-top:10px;
+  opacity:0.95;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 28px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  font-size:16px;
+  transition:0.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-light{
+  background:white;
+  color:#ff416c;
+}
+
+.btn-outline{
+  border:2px solid white;
+  color:white;
 }
 
 /* PROTEIN BAR */
@@ -82,28 +114,28 @@ header p{
 /* SECTIONS */
 
 section{
-  padding:70px 8%;
+  padding:80px 8%;
 }
 
 .title{
   text-align:center;
-  font-size:42px;
+  font-size:44px;
   font-weight:800;
-  margin-bottom:35px;
+  margin-bottom:40px;
 }
 
-/* MENU CARD */
+/* CARD */
 
 .card{
   background:white;
-  padding:28px;
-  border-radius:18px;
+  padding:30px;
+  border-radius:20px;
   margin-bottom:25px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .card h2{
-  font-size:28px;
+  font-size:30px;
   color:#ff416c;
   margin-bottom:18px;
 }
@@ -174,19 +206,40 @@ section{
   font-weight:800;
 }
 
+/* WHY */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.why-card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.why-card h3{
+  color:#ff416c;
+  margin-bottom:10px;
+}
+
 /* ABOUT */
 
 .about{
   background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
   text-align:center;
 }
 
 .about p{
-  font-size:17px;
-  line-height:1.7;
+  font-size:18px;
+  line-height:1.8;
   color:#475569;
 }
 
@@ -196,8 +249,8 @@ footer{
   background:#111827;
   color:white;
   text-align:center;
-  padding:25px;
-  margin-top:40px;
+  padding:30px;
+  margin-top:50px;
 }
 
 /* MOBILE */
@@ -205,15 +258,11 @@ footer{
 @media(max-width:768px){
 
 header h1{
-  font-size:44px;
-}
-
-header p{
-  font-size:18px;
+  font-size:46px;
 }
 
 .title{
-  font-size:32px;
+  font-size:34px;
 }
 
 }
@@ -229,13 +278,21 @@ header p{
   <div class="nav-links">
     <a href="#menu">Menu</a>
     <a href="#about">About</a>
+    <a href="#why">Why Ben’s</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header>
-  <h1>Ben’s Protein Ice Cream</h1>
-  <p>Ice cream without the guilt</p>
+
+<h1>Ben’s Protein Ice Cream</h1>
+<p>Ice cream without the guilt</p>
+
+<div class="hero-buttons">
+  <a class="btn btn-light" href="#menu">View Menu</a>
+  <a class="btn btn-outline" href="#about">Learn More</a>
+</div>
+
 </header>
 
 <!-- PROTEIN BAR -->
@@ -248,7 +305,6 @@ header p{
 
 <div class="title">Menu</div>
 
-<!-- STARTER -->
 <div class="card">
 <h2>Starter</h2>
 
@@ -264,7 +320,6 @@ header p{
 
 </div>
 
-<!-- UPGRADED -->
 <div class="card">
 <h2>Upgraded</h2>
 
@@ -285,7 +340,6 @@ header p{
 
 </div>
 
-<!-- ULTIMATE -->
 <div class="card">
 <h2>Ultimate</h2>
 
@@ -299,7 +353,6 @@ header p{
   <div class="price">$7</div>
 </div>
 
-<!-- Example SOLD OUT -->
 <div class="item sold-out">
   <div class="flavor">Seasonal Flavor</div>
   <div class="price">$7</div>
@@ -312,13 +365,39 @@ header p{
 <!-- ABOUT -->
 <section id="about">
 
-<div class="title">About</div>
+<div class="title">About Ben’s</div>
 
 <div class="about">
 <p>
-Ben’s Protein Ice Cream is a high-protein dessert brand designed for students and athletes.
-Every scoop delivers great taste with over 20g of protein, making dessert feel guilt-free and powerful.
+Ben’s Protein Ice Cream is a high-protein dessert brand made for students and athletes.
+Every flavor delivers great taste with over 20g of protein so you can enjoy dessert without guilt.
 </p>
+</div>
+
+</section>
+
+<!-- WHY -->
+<section id="why">
+
+<div class="title">Why Ben’s?</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>💪 High Protein</h3>
+<p>Helps keep you full and energized.</p>
+</div>
+
+<div class="why-card">
+<h3>🍦 Great Taste</h3>
+<p>Tastes like real ice cream, not “diet food.”</p>
+</div>
+
+<div class="why-card">
+<h3>🔥 Guilt-Free</h3>
+<p>Enjoy dessert while staying on track.</p>
+</div>
+
 </div>
 
 </section>
