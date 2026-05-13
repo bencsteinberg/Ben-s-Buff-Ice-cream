@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Ben’s Protein Ice Cream</title>
 
-  <!-- Professional Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Premium Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
 
@@ -20,30 +21,56 @@
       font-family:'Montserrat', sans-serif;
       background:#f4f7fb;
       color:#1e293b;
-      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    /* HERO SECTION */
+    /* HERO */
 
     header{
-      background: linear-gradient(135deg,#ff7b54,#ff416c);
+      background:
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      linear-gradient(135deg,#ff7b54,#ff416c);
+
       color:white;
       text-align:center;
-      padding:90px 20px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.15);
+      padding:110px 20px 90px;
+    }
+
+    .hero-content{
+      max-width:900px;
+      margin:auto;
     }
 
     header h1{
-      font-size:72px;
+      font-size:78px;
       font-weight:800;
       letter-spacing:1px;
-      margin-bottom:15px;
+      margin-bottom:18px;
+      line-height:1.05;
     }
 
     header p{
       font-size:28px;
       font-weight:500;
       opacity:0.95;
+      margin-bottom:30px;
+    }
+
+    .hero-button{
+      display:inline-block;
+      background:white;
+      color:#ff416c;
+      padding:16px 34px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:18px;
+      transition:0.2s ease;
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    .hero-button:hover{
+      transform:translateY(-2px);
     }
 
     /* PROTEIN BANNER */
@@ -58,19 +85,27 @@
       letter-spacing:0.5px;
     }
 
-    /* MAIN CONTAINER */
+    /* MAIN */
 
     .container{
-      max-width:1100px;
+      max-width:1150px;
       margin:auto;
-      padding:50px 25px;
+      padding:60px 25px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:46px;
+      margin-bottom:50px;
+      font-weight:800;
+      color:#111827;
     }
 
     /* CATEGORY CARDS */
 
     .category{
       background:white;
-      border-radius:22px;
+      border-radius:24px;
       padding:35px;
       margin-bottom:40px;
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -78,27 +113,26 @@
     }
 
     .category:hover{
-      transform:translateY(-4px);
+      transform:translateY(-5px);
     }
 
     .category h2{
       font-size:38px;
-      margin-bottom:25px;
+      margin-bottom:28px;
       font-weight:800;
       color:#ff416c;
       border-bottom:3px solid #edf2f7;
-      padding-bottom:12px;
+      padding-bottom:14px;
     }
 
-    /* MENU ITEMS */
+    /* ITEMS */
 
     .item{
       display:flex;
       justify-content:space-between;
       align-items:center;
       padding:18px 0;
-      font-size:24px;
-      border-bottom:1px solid #f1f5f9;
+      border-bottom:1px solid #eef2f7;
     }
 
     .item:last-child{
@@ -109,13 +143,23 @@
       display:flex;
       align-items:center;
       gap:12px;
+      font-size:24px;
       font-weight:600;
+      flex-wrap:wrap;
+    }
+
+    .description{
+      font-size:15px;
+      color:#64748b;
+      margin-top:5px;
+      font-weight:500;
     }
 
     .price{
+      font-size:28px;
       font-weight:800;
       color:#111827;
-      font-size:26px;
+      white-space:nowrap;
     }
 
     /* BADGES */
@@ -123,7 +167,7 @@
     .badge{
       background:linear-gradient(135deg,#ffd700,#ffb703);
       color:#111827;
-      font-size:13px;
+      font-size:12px;
       font-weight:800;
       padding:6px 12px;
       border-radius:999px;
@@ -136,39 +180,97 @@
       color:white;
     }
 
+    /* ABOUT */
+
+    .about{
+      margin-top:70px;
+      background:white;
+      border-radius:24px;
+      padding:45px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      text-align:center;
+    }
+
+    .about h3{
+      font-size:36px;
+      margin-bottom:20px;
+      color:#111827;
+    }
+
+    .about p{
+      font-size:20px;
+      color:#475569;
+      line-height:1.8;
+      max-width:800px;
+      margin:auto;
+    }
+
     /* FOOTER */
 
     footer{
       background:#111827;
       color:white;
       text-align:center;
-      padding:30px;
-      margin-top:50px;
+      padding:35px 20px;
+      margin-top:70px;
+    }
+
+    footer p{
       font-size:16px;
+      opacity:0.9;
     }
 
     /* MOBILE */
 
     @media(max-width:768px){
 
+      header{
+        padding:80px 20px;
+      }
+
       header h1{
-        font-size:48px;
+        font-size:50px;
       }
 
       header p{
         font-size:22px;
       }
 
+      .hero-button{
+        font-size:16px;
+        padding:14px 28px;
+      }
+
+      .protein-banner{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:34px;
+      }
+
+      .category{
+        padding:25px;
+      }
+
       .category h2{
         font-size:30px;
       }
 
-      .item{
+      .flavor{
         font-size:20px;
       }
 
       .price{
-        font-size:22px;
+        font-size:24px;
+      }
+
+      .about h3{
+        font-size:28px;
+      }
+
+      .about p{
+        font-size:18px;
       }
 
     }
@@ -180,100 +282,217 @@
 
   <!-- HERO -->
   <header>
-    <h1>Ben’s Protein Ice Cream</h1>
-    <p>“Ice cream without the guilt”</p>
+
+    <div class="hero-content">
+
+      <h1>Ben’s Protein Ice Cream</h1>
+
+      <p>“Ice cream without the guilt”</p>
+
+      <a href="#menu" class="hero-button">
+        View Menu
+      </a>
+
+    </div>
+
   </header>
 
   <!-- PROTEIN BANNER -->
+
   <div class="protein-banner">
     💪 Over 20g of protein in every ice cream
   </div>
 
-  <!-- MENU -->
+  <!-- MAIN CONTENT -->
+
   <div class="container">
 
+    <h2 class="section-title" id="menu">
+      Our Menu
+    </h2>
+
     <!-- STARTER -->
+
     <div class="category">
+
       <h2>Starter</h2>
 
       <div class="item">
-        <div class="flavor">
-          Vanilla
+
+        <div>
+          <div class="flavor">
+            Vanilla
+          </div>
+
+          <div class="description">
+            Smooth classic vanilla protein ice cream
+          </div>
         </div>
+
         <div class="price">$3</div>
+
       </div>
 
       <div class="item">
-        <div class="flavor">
-          Chocolate
-          <span class="badge popular">Popular</span>
+
+        <div>
+          <div class="flavor">
+            Chocolate
+            <span class="badge popular">Popular</span>
+          </div>
+
+          <div class="description">
+            Rich chocolate flavor with extra creaminess
+          </div>
         </div>
+
         <div class="price">$3</div>
+
       </div>
 
     </div>
 
     <!-- UPGRADED -->
+
     <div class="category">
+
       <h2>Upgraded</h2>
 
       <div class="item">
-        <div class="flavor">
-          Cookies n Cream
-          <span class="badge popular">Best Seller</span>
+
+        <div>
+          <div class="flavor">
+            Cookies n Cream
+            <span class="badge popular">Best Seller</span>
+          </div>
+
+          <div class="description">
+            Crushed cookies blended into creamy vanilla
+          </div>
         </div>
+
         <div class="price">$5</div>
+
       </div>
 
       <div class="item">
-        <div class="flavor">
-          Peanut Butter
+
+        <div>
+          <div class="flavor">
+            Peanut Butter
+          </div>
+
+          <div class="description">
+            Smooth peanut butter packed with protein
+          </div>
         </div>
+
         <div class="price">$5</div>
+
       </div>
 
       <div class="item">
-        <div class="flavor">
-          Mint Chip
+
+        <div>
+          <div class="flavor">
+            Mint Chip
+          </div>
+
+          <div class="description">
+            Cool mint flavor with chocolate chips
+          </div>
         </div>
+
         <div class="price">$5</div>
+
       </div>
 
     </div>
 
     <!-- ULTIMATE -->
+
     <div class="category">
+
       <h2>Ultimate</h2>
 
       <div class="item">
-        <div class="flavor">
-          Banana Bread
-          <span class="badge">Signature Flavor</span>
+
+        <div>
+          <div class="flavor">
+            Banana Bread
+            <span class="badge">
+              Signature Flavor
+            </span>
+          </div>
+
+          <div class="description">
+            Banana bread inspired protein ice cream with cinnamon flavor
+          </div>
         </div>
+
         <div class="price">$8</div>
+
       </div>
 
       <div class="item">
-        <div class="flavor">
-          Brownie Blast
+
+        <div>
+          <div class="flavor">
+            Brownie Blast
+          </div>
+
+          <div class="description">
+            Rich brownie flavor with chocolate chunks
+          </div>
         </div>
+
         <div class="price">$8</div>
+
       </div>
 
       <div class="item">
-        <div class="flavor">
-          Chocolate Crunch Dirt
+
+        <div>
+          <div class="flavor">
+            Chocolate Crunch Dirt
+          </div>
+
+          <div class="description">
+            Chocolate cookie crumble with crunchy mix-ins
+          </div>
         </div>
+
         <div class="price">$8</div>
+
       </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div class="about">
+
+      <h3>Why Ben’s?</h3>
+
+      <p>
+        Ben’s Protein Ice Cream combines the flavor of real ice cream
+        with high-protein ingredients designed to taste great without
+        the guilt. Built for students, athletes, gym-goers, and anyone
+        who wants dessert that feels rewarding.
+      </p>
 
     </div>
 
   </div>
 
   <!-- FOOTER -->
+
   <footer>
-    © 2026 Ben’s Protein Ice Cream
+
+    <p>
+      © 2026 Ben’s Protein Ice Cream
+    </p>
+
   </footer>
 
 </body>
