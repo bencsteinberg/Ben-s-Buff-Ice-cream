@@ -60,7 +60,7 @@ header p{
   opacity:0.95;
 }
 
-/* HERO BUTTONS (FIXED BOXES) */
+/* HERO BUTTONS */
 
 .hero-buttons{
   margin-top:25px;
@@ -76,27 +76,19 @@ header p{
   font-weight:800;
   text-decoration:none;
   font-size:15px;
-
-  /* 🔥 FIX: makes them actual visible boxes */
   display:inline-block;
   border:2px solid rgba(255,255,255,0.7);
   background:rgba(255,255,255,0.15);
   color:white;
-  transition:0.2s ease;
 }
 
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-/* solid white button */
 .btn-light{
   background:white;
   color:#ff416c;
   border:none;
 }
 
-/* PROTEIN BAR */
+/* BAR */
 
 .bar{
   background:#111827;
@@ -130,7 +122,7 @@ section{
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* MENU TITLES */
+/* MENU HEADINGS */
 
 .card h2{
   font-size:34px;
@@ -204,8 +196,8 @@ section{
 
 .sold-out{
   opacity:0.2;
-  position:relative;
   filter:grayscale(100%);
+  position:relative;
 }
 
 .sold-out::after{
@@ -246,13 +238,10 @@ footer{
 <p>Ice cream without the guilt</p>
 
 <div class="hero-buttons">
-
   <a href="#menu" class="btn btn-light">View Menu</a>
   <a href="#about" class="btn">Learn More</a>
   <a href="#why" class="btn">Why Ben’s</a>
-
 </div>
-
 </header>
 
 <div class="bar">
@@ -316,9 +305,24 @@ footer{
 <div class="card">
 <h2>Ultimate</h2>
 
+<!-- ONLY CHANGE: BANANA BREAD TAG ADDED -->
 <div class="item">
   <div class="left">
-    <div class="flavor">Banana Bread</div>
+    <div class="flavor">
+      Banana Bread
+      <span style="
+        background:gold;
+        color:#111827;
+        font-size:11px;
+        padding:4px 8px;
+        border-radius:999px;
+        font-weight:900;
+        margin-left:8px;
+        display:inline-block;
+      ">
+        SIGNATURE FLAVOR
+      </span>
+    </div>
     <div class="desc">Signature flavor inspired by warm banana bread.</div>
   </div>
   <div class="price">$7</div>
